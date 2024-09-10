@@ -1,12 +1,7 @@
 <template>
     <div>
-
-
         <div class="bg-white text-gray-600 work-sans leading-normal text-base tracking-normal">
-
-
             <section class="bg-white py-8">
-
                 <div class="container py-8 px-6 mx-auto">
 
                     <div class="box pt-6">
@@ -24,15 +19,11 @@
                                 <div>
                                     <button @click="submitSearch"> Search
                                     </button>
-
                                 </div>
                             </div>
-
                         </div>
                     </div>
-
                 </div>
-
             </section>
 
 
@@ -42,8 +33,6 @@
                 <div class="container mx-auto flex items-center flex-wrap pb-12">
 
                     <div v-if="!searchMade">
-                   
-
                         <section>
                             <div class="mx-auto max-w-screen-xl px-4 py-8 sm:px-6 sm:py-4 lg:px-">
                                 <header>

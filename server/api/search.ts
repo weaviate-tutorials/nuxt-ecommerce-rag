@@ -20,7 +20,7 @@ const responseSchema = z.object({
 async function vectorSearch(searchTerm:string) {
   const myProductCollection = client.collections.get('TestProduct')
 
-const response = await myProductCollection.query.nearImage(searchTerm, { limit : 10 })
+const response = await myProductCollection.query.nearText(searchTerm, { limit : 10 })
 
 return response.objects
 
