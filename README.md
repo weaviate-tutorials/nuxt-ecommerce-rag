@@ -1,4 +1,4 @@
-# An eCommerce site with Vector Search and RAG to search through outdoor product listing and help you plan hikes built with [Weaviate](https://weaviate.io/), [Nuxt.js](https://nuxt.com/modules/webhook-validators), [Cohere](https://cohere.com/) and [Open AI](https://openai.com/). 
+# An eCommerce application with Vector Search and RAG built with [Weaviate](https://weaviate.io/), [Nuxt.js](https://nuxt.com/modules/webhook-validators), [Cohere](https://cohere.com/) and [Open AI](https://openai.com/). 
 
 This repo should help get you started developing RAG Applications for eCommerce with Weaviate and Nuxt.js.
 
@@ -21,7 +21,7 @@ This repo should help get you started developing RAG Applications for eCommerce 
     - your Open AI API key as `NUXT_OPENAI_API_KEY` (you can get this in your [Open AI settings](https://platform.openai.com/account/api-keys))
     - your Cohere API key as `NUXT_COHERE_API_KEY` (you can get this in your [Cohere settings](https://dashboard.cohere.com/api-keys))
     - your Weaviate API key as `NUXT_WEAVIATE_READ_KEY` (you can get this in your [Weaviate dashboard](https://console.weaviate.cloud/dashboard) under sandbox details)
-    - your Weaviate API key as `NUXT_WEAVIATE_ADMIN_KEY` (you can get this in your [Weaviate dashboard](https://console.weaviate.cloud/dashboard) under sandbox details)
+    - your Weaviate Admin API key as `NUXT_WEAVIATE_ADMIN_KEY` (you can get this in your [Weaviate dashboard](https://console.weaviate.cloud/dashboard) under sandbox details)
     - your Weaviate host URL as `NUXT_WEAVIATE_HOST_URL` (you can get this in your [Weaviate dashboard](https://console.weaviate.cloud/dashboard) under sandbox details)
 
 
