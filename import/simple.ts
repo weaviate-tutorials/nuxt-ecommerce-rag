@@ -54,24 +54,16 @@ async function importProductData(fileName: string, collectionName: string) {
     // Parse the CSV content
     console.log('content', content)
     const records = parse(content, { delimiter: ';' });
-    // console.log('records',records)
-    console.log(records.length)
-    console.log(records[0])
-    console.log(records[1][0])
-
-
 
     const myCollection = client.collections.get(collectionName);
     let itemsToInsert = [];
     let counter = 0;
-
 
     for (const item of records) {
         counter++
         if (counter % 1000 == 0) {
             console.log(`Import: ${counter}`);
         }
-
     
         itemsToInsert.push({
             name: item[0],
@@ -92,9 +84,7 @@ async function importProductData(fileName: string, collectionName: string) {
                 throw new Error("Something went wrong in import!");
             }
         }
-
     }
-
 
     // insert the remaining objects
     if (itemsToInsert.length > 0) {
@@ -127,7 +117,6 @@ async function importTrailData(fileName: string, collectionName: string) {
             console.log(`Import: ${counter}`);
         }
 
-
         itemsToInsert.push({
             trail_name: item[0],
             link_AllTrails: item[1],
@@ -150,9 +139,7 @@ async function importTrailData(fileName: string, collectionName: string) {
                 throw new Error("Something went wrong in import!");
             }
         }
-
     }
-
 
     // insert the remaining objects
     if (itemsToInsert.length > 0) {
@@ -168,5 +155,5 @@ async function importTrailData(fileName: string, collectionName: string) {
 
 // Uncomment to create collection and import data before you run script
 // await createCollection()
-// await importProductData('trails.csv','TestProduct')
+// await importProductData('products.csv','TestProduct')
 // await importTrailData('trails.csv', 'TestTrail')

@@ -25,7 +25,7 @@ export default defineLazyEventHandler(async () => {
     const response = await myTrailCollection.generate.nearText(searchTerm, {
       groupedTask: `i want you to be a core planner that thinks about all the equipment related hiking.
     someone wants to go on a hike they described as "${searchTerm}". using the information you receive below
-    give them one recommendation for hike to take in markdown including details like location, difficulty and length
+    give them one recommendation for a hike to take in markdown including details like location, difficulty and length
 
     i also want you to output 4 essential items in json format that they might need to buy to go on this hike successfully
     and safely. before the json place this character "@"

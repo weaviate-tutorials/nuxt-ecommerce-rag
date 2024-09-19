@@ -8,7 +8,6 @@ const client: WeaviateClient = await weaviate.connectToWeaviateCloud(config.weav
     authCredentials: new weaviate.ApiKey(config.weaviateReadKey),
     headers: {
       'X-Cohere-Api-Key': config.cohereApiKey,
-      'X-OpenAI-Api-Key': config.openaiApiKey,
     }
   }
 )
@@ -23,7 +22,6 @@ async function vectorSearch(searchTerm:string) {
 const response = await myProductCollection.query.nearText(searchTerm, { limit : 10 })
 
 return response.objects
-
 
 }
 

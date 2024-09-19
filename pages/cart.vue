@@ -15,8 +15,6 @@
                                     <h3 class="text-sm text-gray-900">{{ item.properties.name }}</h3>
 
                                     <dl class="mt-0.5 space-y-px text-[15px] text-gray-600">
-
-
                                         <div>
                                             <dt class="inline">Quantity:</dt>
                                             <dd class="inline">{{ item.quantity }}</dd>
@@ -101,9 +99,6 @@
                 </div>
             </div>
         </section>
-
-
-
     </div>
 </template>
   

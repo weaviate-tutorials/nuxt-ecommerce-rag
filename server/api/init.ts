@@ -7,7 +7,6 @@ const client: WeaviateClient = await weaviate.connectToWeaviateCloud(config.weav
     authCredentials: new weaviate.ApiKey(config.weaviateReadKey),
     headers: {
       'X-Cohere-Api-Key': config.cohereApiKey,
-      'X-OpenAI-Api-Key': config.openaiApiKey,
     }
   }
 )

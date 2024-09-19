@@ -1,12 +1,10 @@
 <template>
     <div>
         <div class="bg-white text-gray-600 work-sans leading-normal text-base tracking-normal">
-
             <div v-if="!searchMade">
 
                 <section class="w-full mx-auto bg-nordic-gray-light flex pt-12 md:pt-0 md:items-center bg-cover bg-right"
                     style="max-width:1600px; height: 32rem; background-image: url('cover-1.png');">
-
                     <div class="container mx-auto">
 
                         <div class="flex flex-col w-full lg:w-1/2 justify-center items-start  px-6 tracking-wide">
@@ -17,50 +15,41 @@
                                 <p class=" font-base text-base text-white">you need to go from couch to
                                     mountain or valley</p>
                             </div>
-
                         </div>
-
                     </div>
-
                 </section>
 
 
                 <section class="bg-white py-2">
-
                     <div class="container py-2 px-6 mx-auto">
-
                         <div class="hero-headline flex flex-col items-center justify-center pt-24 text-center">
-                                <h1 class=" font-bold text-3xl text-gray-900">What type of hike are you looking for?</h1>
-                                <p class=" font-base text-base text-gray-600">"try a nice and easy hike close to mumbai with
-                                    some lovely waterfalls"</p>
-                            </div>
+                            <h1 class=" font-bold text-3xl text-gray-900">What type of hike are you looking for?</h1>
+                            <p class=" font-base text-base text-gray-600">"try a nice and easy hike close to mumbai with
+                                some lovely waterfalls"</p>
+                        </div>
 
                         <div class="box pt-6">
                             <div class="box-wrapper">
-
                                 <div
-                                        class=" bg-white rounded flex items-center w-full p-3 shadow-sm border border-gray-200">
-                                        <button class="outline-none focus:outline-none"><svg
-                                                class=" w-5 text-gray-600 h-5 cursor-pointer" fill="none"
-                                                stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                stroke="currentColor" viewBox="0 0 24 24">
-                                                <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
-                                            </svg></button>
-                                        <input v-model="searchTerm" type="search" name="" id=""
-                                            placeholder="a nice easy hike close to mumbai" x-model="q"
-                                            class="w-full pl-4 text-sm outline-none focus:outline-none bg-transparent">
-                                        <div>
-                                            <button @click="submitSearch"> Gooo
-                                            </button>
+                                    class=" bg-white rounded flex items-center w-full p-3 shadow-sm border border-gray-200">
+                                    <button class="outline-none focus:outline-none"><svg
+                                            class=" w-5 text-gray-600 h-5 cursor-pointer" fill="none" stroke-linecap="round"
+                                            stroke-linejoin="round" stroke-width="2" stroke="currentColor"
+                                            viewBox="0 0 24 24">
+                                            <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                                        </svg></button>
+                                    <input v-model="searchTerm" type="search" name="" id=""
+                                        placeholder="a nice easy hike close to mumbai" x-model="q"
+                                        class="w-full pl-4 text-sm outline-none focus:outline-none bg-transparent">
+                                    <div>
+                                        <button @click="submitSearch"> Gooo
+                                        </button>
 
-                                        </div>
                                     </div>
-
+                                </div>
                             </div>
                         </div>
-
                     </div>
-
                 </section>
 
             </div>
@@ -93,30 +82,24 @@
             </div>
 
             <div v-if="searchMade">
-                <section class="w-full mx-auto bg-nordic-gray-light flex pt-12 md:pt-0 md:items-center bg-cover bg-right pb-8"
+                <section
+                    class="w-full mx-auto bg-nordic-gray-light flex pt-12 md:pt-0 md:items-center bg-cover bg-right pb-8"
                     style="max-width:1600px; height: 16rem; background-image: url('cover-2.png');">
 
                     <div class="container mx-auto">
 
                         <div class="flex flex-col w-full lg:w-1/2 justify-center items-start  px-6 tracking-wide">
                             <h1 class="text-white text-4xl my-4">we present to you your hike </h1>
-                            
+
                         </div>
-
                     </div>
-
                 </section>
 
                 <section class="bg-white pt-4 mt-8">
-
                     <div class="container px-6 mx-auto">
                         <vue-markdown-it :source="searchResult.generated.split('@')[0]" />
-
                     </div>
-
                 </section>
-
-
 
                 <section class="bg-white">
 
@@ -135,107 +118,115 @@
                         </nav>
 
                         <div class="lg:col-span-4">
-                                        <ul class="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+                            <ul class="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
 
 
-                                                <li>
-                                                    <a href="#" class="group block overflow-hidden">
-                                                        <img :src="productResult.item1[0].properties.image" alt=""
-                                                            class="h-[350px] w-[350px] object-none transition duration-500 group-hover:scale-105 sm:h-[350px]" />
+                                <li>
+                                    <a href="#" class="group block overflow-hidden">
+                                        <img :src="productResult.item1[0].properties.image" alt=""
+                                            class="h-[350px] w-[350px] object-none transition duration-500 group-hover:scale-105 sm:h-[350px]" />
 
-                                                        <div class="relative bg-white pt-3">
-                                                            <h3
-                                                                class="text-xs text-gray-700 group-hover:underline group-hover:underline-offset-4">
-                                                                {{ productResult.item1[0].properties.name.slice(0, 80) }}...
-                                                            </h3>
+                                        <div class="relative bg-white pt-3">
+                                            <h3
+                                                class="text-xs text-gray-700 group-hover:underline group-hover:underline-offset-4">
+                                                {{ productResult.item1[0].properties.name.slice(0, 80) }}...
+                                            </h3>
 
-                                                            <p class="mt-2">
-                                                                <span class="sr-only"> Regular Price </span>
+                                            <p class="mt-2">
+                                                <span class="sr-only"> Regular Price </span>
 
-                                                                <span class="tracking-wider text-gray-900">
-                                                                   ${{ parseFloat(productResult.item1[0].properties.price.replace("₹", '')) }}</span>
-                                                            </p>
+                                                <span class="tracking-wider text-gray-900">
+                                                    ${{ parseFloat(productResult.item1[0].properties.price.replace("₹", ''))
+                                                    }}</span>
+                                            </p>
 
-                                                        </div>
-                                                    </a>
-                                                    <button @click="addToCart(productResult.item1[0])" class="bg-blue-300 text-white p-1">Add to Cart</button>
+                                        </div>
+                                    </a>
+                                    <button @click="addToCart(productResult.item1[0])"
+                                        class="bg-blue-300 text-white p-1">Add to Cart</button>
 
-                                                </li>
+                                </li>
 
-                                                <li>
-                                                    <a href="#" class="group block overflow-hidden">
-                                                        <img :src="productResult.item2[0].properties.image" alt=""
-                                                            class="h-[350px] w-[350px] object-none transition duration-500 group-hover:scale-105 sm:h-[350px]" />
+                                <li>
+                                    <a href="#" class="group block overflow-hidden">
+                                        <img :src="productResult.item2[0].properties.image" alt=""
+                                            class="h-[350px] w-[350px] object-none transition duration-500 group-hover:scale-105 sm:h-[350px]" />
 
-                                                        <div class="relative bg-white pt-3">
-                                                            <h3
-                                                                class="text-xs text-gray-700 group-hover:underline group-hover:underline-offset-4">
-                                                                {{ productResult.item2[0].properties.name.slice(0, 80) }}...
-                                                            </h3>
+                                        <div class="relative bg-white pt-3">
+                                            <h3
+                                                class="text-xs text-gray-700 group-hover:underline group-hover:underline-offset-4">
+                                                {{ productResult.item2[0].properties.name.slice(0, 80) }}...
+                                            </h3>
 
-                                                            <p class="mt-2">
-                                                                <span class="sr-only"> Regular Price </span>
+                                            <p class="mt-2">
+                                                <span class="sr-only"> Regular Price </span>
 
-                                                                <span class="tracking-wider text-gray-900">
-                                                                   ${{ parseFloat(productResult.item2[0].properties.price.replace("₹", '')) }}</span>
-                                                            </p>
+                                                <span class="tracking-wider text-gray-900">
+                                                    ${{ parseFloat(productResult.item2[0].properties.price.replace("₹", ''))
+                                                    }}</span>
+                                            </p>
 
-                                                        </div>
-                                                    </a>
-                                                    <button @click="addToCart(productResult.item2[0])" class="bg-blue-300 text-white p-1">Add to Cart</button>
+                                        </div>
+                                    </a>
+                                    <button @click="addToCart(productResult.item2[0])"
+                                        class="bg-blue-300 text-white p-1">Add to Cart</button>
 
-                                                </li>
+                                </li>
 
-                                                <li>
-                                                    <a href="#" class="group block overflow-hidden">
-                                                        <img :src="productResult.item3[0].properties.image" alt=""
-                                                            class="h-[350px] w-[350px] object-none transition duration-500 group-hover:scale-105 sm:h-[350px]" />
+                                <li>
+                                    <a href="#" class="group block overflow-hidden">
+                                        <img :src="productResult.item3[0].properties.image" alt=""
+                                            class="h-[350px] w-[350px] object-none transition duration-500 group-hover:scale-105 sm:h-[350px]" />
 
-                                                        <div class="relative bg-white pt-3">
-                                                            <h3
-                                                                class="text-xs text-gray-700 group-hover:underline group-hover:underline-offset-4">
-                                                                {{ productResult.item3[0].properties.name.slice(0, 80) }}...
-                                                            </h3>
+                                        <div class="relative bg-white pt-3">
+                                            <h3
+                                                class="text-xs text-gray-700 group-hover:underline group-hover:underline-offset-4">
+                                                {{ productResult.item3[0].properties.name.slice(0, 80) }}...
+                                            </h3>
 
-                                                            <p class="mt-2">
-                                                                <span class="sr-only"> Regular Price </span>
+                                            <p class="mt-2">
+                                                <span class="sr-only"> Regular Price </span>
 
-                                                                <span class="tracking-wider text-gray-900">
-                                                                   ${{ parseFloat(productResult.item3[0].properties.price.replace("₹", '')) }}</span>
-                                                            </p>
+                                                <span class="tracking-wider text-gray-900">
+                                                    ${{ parseFloat(productResult.item3[0].properties.price.replace("₹", ''))
+                                                    }}</span>
+                                            </p>
 
-                                                        </div>
-                                                    </a>
-                                                    <button @click="addToCart(productResult.item3[0])" class="bg-blue-300 text-white p-1">Add to Cart</button>
+                                        </div>
+                                    </a>
+                                    <button @click="addToCart(productResult.item3[0])"
+                                        class="bg-blue-300 text-white p-1">Add to Cart</button>
 
-                                                </li>
+                                </li>
 
-                                                <li>
-                                                    <a href="#" class="group block overflow-hidden">
-                                                        <img :src="productResult.item4[0].properties.image" alt=""
-                                                            class="h-[350px] w-[350px] object-none transition duration-500 group-hover:scale-105 sm:h-[350px]" />
+                                <li>
+                                    <a href="#" class="group block overflow-hidden">
+                                        <img :src="productResult.item4[0].properties.image" alt=""
+                                            class="h-[350px] w-[350px] object-none transition duration-500 group-hover:scale-105 sm:h-[350px]" />
 
-                                                        <div class="relative bg-white pt-3">
-                                                            <h3
-                                                                class="text-xs text-gray-700 group-hover:underline group-hover:underline-offset-4">
-                                                                {{ productResult.item4[0].properties.name.slice(0, 80) }}...
-                                                            </h3>
+                                        <div class="relative bg-white pt-3">
+                                            <h3
+                                                class="text-xs text-gray-700 group-hover:underline group-hover:underline-offset-4">
+                                                {{ productResult.item4[0].properties.name.slice(0, 80) }}...
+                                            </h3>
 
-                                                            <p class="mt-2">
-                                                                <span class="sr-only"> Regular Price </span>
+                                            <p class="mt-2">
+                                                <span class="sr-only"> Regular Price </span>
 
-                                                                <span class="tracking-wider text-gray-900">
-                                                                   ${{ parseFloat(productResult.item4[0].properties.price.replace("₹", '')) }}</span>
-                                                            </p>
+                                                <span class="tracking-wider text-gray-900">
+                                                    ${{ parseFloat(productResult.item4[0].properties.price.replace("₹", ''))
+                                                    }}</span>
+                                            </p>
 
-                                                        </div>
-                                                    </a>
-                                                    <button @click="addToCart(productResult.item4[0])" class="bg-blue-300 text-white p-1">Add to Cart</button>
+                                        </div>
+                                    </a>
+                                    <button @click="addToCart(productResult.item4[0])"
+                                        class="bg-blue-300 text-white p-1">Add to Cart</button>
 
-                                                </li>
-                                                
-                                        </ul>
-                                    </div>
+                                </li>
+
+                            </ul>
+                        </div>
 
                     </div>
 
@@ -273,57 +264,3 @@ async function submitSearch() {
 }
 
 </script>
-
-<style>
-.work-sans {
-    font-family: 'Work Sans', sans-serif;
-}
-
-#menu-toggle:checked+#menu {
-    display: block;
-}
-
-.hover\:grow {
-    transition: all 0.3s;
-    transform: scale(1);
-}
-
-.hover\:grow:hover {
-    transform: scale(1.02);
-}
-
-.carousel-open:checked+.carousel-item {
-    position: static;
-    opacity: 100;
-}
-
-.carousel-item {
-    -webkit-transition: opacity 0.6s ease-out;
-    transition: opacity 0.6s ease-out;
-}
-
-#carousel-1:checked~.control-1,
-#carousel-2:checked~.control-2,
-#carousel-3:checked~.control-3 {
-    display: block;
-}
-
-.carousel-indicators {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    position: absolute;
-    bottom: 2%;
-    left: 0;
-    right: 0;
-    text-align: center;
-    z-index: 10;
-}
-
-#carousel-1:checked~.control-1~.carousel-indicators li:nth-child(1) .carousel-bullet,
-#carousel-2:checked~.control-2~.carousel-indicators li:nth-child(2) .carousel-bullet,
-#carousel-3:checked~.control-3~.carousel-indicators li:nth-child(3) .carousel-bullet {
-    color: #000;
-    /*Set to match the Tailwind colour you want the active one to be */
-}
-</style>
