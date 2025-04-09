@@ -55,7 +55,7 @@ async function importProductData(fileName: string, collectionName: string) {
     console.log('content', content)
     const records = parse(content, { delimiter: ';' });
 
-    const myCollection = client.collections.get(collectionName);
+    const myCollection = client.collections.use(collectionName);
     let itemsToInsert = [];
     let counter = 0;
 
@@ -106,7 +106,7 @@ async function importTrailData(fileName: string, collectionName: string) {
     console.log('content', content)
     const records = parse(content);
     
-    const myCollection = client.collections.get(collectionName);
+    const myCollection = client.collections.use(collectionName);
     let itemsToInsert = [];
     let counter = 0;
 
