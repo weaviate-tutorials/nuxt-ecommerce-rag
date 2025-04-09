@@ -22,7 +22,7 @@ async function vectorSearch(products: string) {
 
   const jsonProducts = JSON.parse(products)
 
-  const myProductCollection = client.collections.get('TestProduct')
+  const myProductCollection = client.collections.use('TestProduct')
 
 const response1 = await myProductCollection.query.nearText(jsonProducts[0].item,{ limit : 2 })
 const response2 = await myProductCollection.query.nearText(jsonProducts[1].item,{ limit : 2 })
@@ -33,6 +33,8 @@ let item1 = response1.objects
 let item2 = response2.objects
 let item3 = response3.objects
 let item4 = response4.objects
+
+console.log("Product Recs", { item1, item2, item3, item4 })
 
 return { item1, item2, item3, item4 }
 }

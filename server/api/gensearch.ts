@@ -20,7 +20,7 @@ export default defineLazyEventHandler(async () => {
 
 
   async function vectorSearch(searchTerm: string) {
-    const myTrailCollection = client.collections.get('TestTrail')
+    const myTrailCollection = client.collections.use('TestTrail')
 
     const response = await myTrailCollection.generate.nearText(searchTerm, {
       groupedTask: `i want you to be a core planner that thinks about all the equipment related hiking.
@@ -33,6 +33,10 @@ export default defineLazyEventHandler(async () => {
     place recommendations first and json after.. json should look like this [{item:"description"}]
     `
     }, { limit: 3 })
+
+    console.log("1st Search", response.objects)
+    console.log("1st Search Products", response.generated)
+
 
     return response
 

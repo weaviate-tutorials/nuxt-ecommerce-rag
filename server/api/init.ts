@@ -12,7 +12,7 @@ const client: WeaviateClient = await weaviate.connectToWeaviateCloud(config.weav
 )
 
 async function initialFetch() {
-const myProductCollection = client.collections.get('TestProduct')
+const myProductCollection = client.collections.use('TestProduct')
 
 const response = await myProductCollection.query.fetchObjects({ limit : 20 })
 

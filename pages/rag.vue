@@ -256,8 +256,10 @@ async function submitSearch() {
     searchResult.value = null
     loading.value = true
     productLoading.value = true
+    // start 
     searchResult.value = await $fetch(`/api/gensearch?query=${searchTerm.value}`)
     productResult.value = await $fetch(`/api/product?query=${searchResult.value.generated.split('@')[1]}`)
+    // end
     searchMade.value = true
     loading.value = false
     productLoading.value = false
